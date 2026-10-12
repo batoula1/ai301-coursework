@@ -217,15 +217,33 @@ from the plan:
    and the file gave `23 passed` (from `22 passed, 1 xfailed`).
 5. **Commit message.** The plan suggested
    `test(agent): extend README scorer fixture to match its comprehensive assertion`
-   with `Fixes #63` in the body. The commit uses
-   `fix: extend README scorer fixture for issue #63` instead, with no
-   `Fixes #63` line. It is still a Conventional Commits type, but it
-   has no scope, and the PR description will need to link #63.
-6. **Not done yet.** The change is committed on
-   `fix/63-readme-scorer-fixture-length` as `45797c6`, with only
-   `tests/unit/test_readme_scorer.py` in the commit. No pull request
-   is open, so CI (plan test step 6) has not run.
+   with `Fixes #63` in the body. I first committed and pushed the change
+   as `45797c6`, `fix: extend README scorer fixture for issue #63`,
+   which has no scope and no `Fixes #63` line. pr-precheck then flagged
+   that `docs/CONTRIBUTING.md` requires `<type>(<scope>): <description>`.
+   I amended only the message, to
+   `test(agent): extend README scorer fixture for issue #63` with
+   `Fixes #63` in the body. That gave commit `fa972f1`, and I
+   force-pushed it to my fork with lease. The code is byte-identical:
+   both commits have tree `9bb5292`, and the diff between them is empty.
+   The message is now the plan's type and scope with a shorter
+   description.
+6. **PR checks run as the template lists them.** On `fa972f1` I ran
+   `make test-unit` (`376 passed, 52 xfailed, 1 warning`, exit 0),
+   `make lint` (exit 0), and `make typecheck` (exit 0).
+   `make test-integration` collected no tests: pytest exits 5 and
+   `make` exits 2. `tests/integration/` holds only `__init__.py` on
+   `main` and on this branch. I also ran the frontend job's command
+   from CONTRIBUTING, `cd frontend && npm ci && npm test -- --run`
+   (`18 passed`, exit 0, Node 20.11.0 locally against CI's Node 18).
+   The plan did not name the integration or frontend commands.
+7. **Not done yet.** The change is committed on
+   `fix/63-readme-scorer-fixture-length` as `fa972f1` and pushed to my
+   fork, with only `tests/unit/test_readme_scorer.py` in the commit.
+   No pull request is open, so CI (plan test step 6) has not run.
 
 Commands, outputs, and exit codes are saved in `baseline-tests.log`
 (before editing), `after-fixture-tests.log` (fixture extended, marker
-still on), and `final-tests.log` (marker removed).
+still on), `final-tests.log` (marker removed, before committing),
+`after-repro.log`, `pr-checks.log`, and `frontend-check.log` (all on
+`fa972f1`).
