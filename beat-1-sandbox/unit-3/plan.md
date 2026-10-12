@@ -237,10 +237,14 @@ from the plan:
    from CONTRIBUTING, `cd frontend && npm ci && npm test -- --run`
    (`18 passed`, exit 0, Node 20.11.0 locally against CI's Node 18).
    The plan did not name the integration or frontend commands.
-7. **Not done yet.** The change is committed on
+7. **Pull request and CI.** The change is committed on
    `fix/63-readme-scorer-fixture-length` as `fa972f1` and pushed to my
    fork, with only `tests/unit/test_readme_scorer.py` in the commit.
-   No pull request is open, so CI (plan test step 6) has not run.
+   When pr-precheck graded this plan, no pull request was open, so CI
+   (plan test step 6) had not run. After that check, I opened PR #152
+   from that branch:
+   https://github.com/codepath/pathreview-ai301-fa26-s3/pull/152.
+   This plan does not record any CI result for that PR.
 
 Commands, outputs, and exit codes are saved in `baseline-tests.log`
 (before editing), `after-fixture-tests.log` (fixture extended, marker
