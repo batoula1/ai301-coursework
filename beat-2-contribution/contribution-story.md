@@ -8,9 +8,8 @@ format criteria grade exactly that. Your course repo link is the whole submissio
 files and no evidence uploads are part of Assignment 5.
 
 **Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
+**Student:** Halima Allouch
+**GitHub Username:** batoula1
 **Issue:** [GitHub issue link]
 **Pull Request:** [GitHub PR link, once opened]
 
@@ -55,10 +54,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Set up my JavaScript issue scout; scan blocked by expired Claude access (November 10, 2026)**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I upgraded issue-select to issue-scout, saved my original fit profile, and verified that my rubric and evidence guide were still present. I updated my profile for JavaScript projects and tested a search for open good-first-issue candidates, with a strategy that removes assigned issues and ranks the remaining results by fewest comments, then most recent update, then URL. The search worked, but the Claude scan stopped with an expired login and a 401 authentication error; Claude listed CodePath Student 2.0, while signing in with the same email reported no Console organization. I checked the account status and documented the access problem; the five-candidate scan, verdict review, and grading of picks are still pending, so I have no scout verdicts to report yet.
 
 **Unit 6: [one line on the tool work]**
 
